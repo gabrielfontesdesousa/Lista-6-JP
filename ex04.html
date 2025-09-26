@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="palavra1: ">
+    <input type="text" id="input2" placeholder="palavra2: ">
+    <button onclick="analisa()">Analisar palavras</button>
+    <div id="response"></div>
+    <script>
+        function analisa(){
+            var palavra2 = input2.value
+            var palavra1 = input1.value
+             
+            if (palavra1 == palavra2){
+                response.innerHTML = `As palavras ${palavra1} e ${palavra2} são exatamente iguais!`
+
+            }
+            else if (palavra1.toLowerCase() == palavra2.toLowerCase()){
+                response.innerHTML = `As palavras ${palavra1} e ${palavra2} tem o mesmo conteudo , mas a digitação é diferente(Maiúsculas e minúsculas)`
+            }
+            else{
+                response.innerHTML = `As palavras são completamente diferentes!`
+                
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>

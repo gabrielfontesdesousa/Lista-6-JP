@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="senha: " oninput="troca()">
+    <div id="response"></div>
+    
+    <script>
+        function troca(){
+            var frase = input1.value
+
+            if (frase.includes('a') || frase.includes('A')){
+                response.innerHTML = `${frase.replaceAll("a", '@')}`
+                response.innerHTML = `${frase.replaceAll("A", '@')}`
+            }
+            else if(frase.includes('e') || frase.includes('E')){
+                response.innerHTML = `${frase.replaceAll("e", '3')}`
+                response.innerHTML = `${frase.replaceAll("E", '3')}`
+            }
+        }
+    </script>
+</body>
+</html>
