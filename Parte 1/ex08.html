@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Jogo da Palavra Secreta</h2>
+    <input type="text" id="letra" placeholder="Digite uma letra" />
+    <button onclick="verificar()">Verificar Letra</button>
+    <div id="response"></div>
+
+    <script>
+      var palavraSecreta = "morango";
+      function verificar() {
+        var l = letra.value.toLowerCase();
+        if (l.length == 0) {
+          response.innerHTML = "Digite uma letra!";
+          return;
+        }
+        if (palavraSecreta.toLowerCase().includes(l)) {
+          response.innerHTML = `A letra "${l}" aparece na palavra secreta!`;
+        } else {
+          response.innerHTML = `A letra "${l}" não aparece na palavra secreta!`;
+        }
+      }
+    </script>
+  </body>
+</html>
+<!--
+8. Jogo da Palavra Secreta
+
+Crie um programa que:
+
+a) Defina uma palavra secreta no código, ao iniciar a página (ex: "morango").
+
+b) Solicite letras para o usuário.
+
+c) Ao clicar num botão "Verificar Letras":
+
+    c1) Caso as letras inseridas existam na palavra secreta, exiba "A letra XX aparece na palavra secreta!"
+
+    c2) Caso contrário, exiba "A letra XX não aparece na palavra secreta!"
+
+OBS: nessa versão, é só para verificar se existe ou não.
+-->

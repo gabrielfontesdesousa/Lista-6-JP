@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="frase"
+      placeholder="Digite uma frase"
+      oninput="observar()"
+    /><br />
+    <input
+      type="number"
+      id="posicao"
+      placeholder="Número da letra"
+      oninput="observar()"
+    /><br />
+    <div id="response"></div>
+
+    <script>
+      function observar() {
+        var texto = frase.value;
+        var pos = Number(posicao.value);
+
+        if (texto.length > 0) {
+          var primeira = texto[0];
+          var ultima = texto[texto.length - 1];
+          var letra = "";
+
+          if (pos > 0 && pos <= texto.length) {
+            letra = texto[pos - 1];
+          } else {
+            letra = "insira uma posicao valida";
+          }
+
+          response.innerHTML = `
+                    <p>A primeira letra é: ${primeira}</p>
+                    <p>A ${pos}ª letra é: ${letra}</p>
+                    <p>A última letra é: ${ultima}</p>
+                     `;
+        } else {
+          response.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
+<!--
+Crie um programa o qual:
+
+a) Solicite uma frase qualquer ao usuário
+
+b) Solicite o número de qual letra o usuário deseja ver (por exemplo, 3ª letra, 5ª letra)
+
+c) Enquanto ele digita, abaixo deve aparecer uma frase como esta:
+
+    A primeira letra é: AA
+
+    A XXª letra é: BB
+
+    A última letra é: CC
+
+Onde XX é a posição informada pelo usuário, AA é a primeira letra da frase, BB é a letra da frase que está na posição informada e CC a letra final da frase.
+-->

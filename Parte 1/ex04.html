@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="palavra1: ">
+    <input type="text" id="input2" placeholder="palavra2: ">
+    <button onclick="analisa()">Analisar palavras</button>
+    <div id="response"></div>
+    <script>
+        function analisa(){
+            var palavra2 = input2.value
+            var palavra1 = input1.value
+
+            if (palavra1 == palavra2){
+                response.innerHTML = `As palavras ${palavra1} e ${palavra2} são exatamente iguais!`
+
+            }
+            else if (palavra1.toLowerCase() == palavra2.toLowerCase()){
+                response.innerHTML = `As palavras ${palavra1} e ${palavra2} tem o mesmo conteudo , mas a digitação é diferente(Maiúsculas e minúsculas)`
+            }
+            else{
+                response.innerHTML = `As palavras são completamente diferentes!`
+
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>
+
+<!--
+4. Comparador de Palavras
+
+Crie um programa que:
+
+a) Solicite duas palavras ao usuário.
+
+b) Ao clicar num botão "Analisar Palavras":
+
+   b1) Caso as palavras sejam exatamente iguais em conteúdo e digitação (letras maiúsculas e minúsculas), exiba "As palavras AAA e BBB são exatamente iguais!".
+
+   b2) Caso a digitação das palavras não seja exatamente igual, verifique se o conteúdo das palavras é igual, para exibir "As palavras AAA e BBB possuem o mesmo conteúdo, mas a digitação é diferente (maiúsculas e minúsculas)".
+
+   b3) Caso a digitação das palavras não seja igual e nem o conteúdo, exiba "As palavras AAA e BBB são completamente diferentes!".
+
+OBS: utilize .toLowerCase() e .toUpperCase() para manipular os textos em um tipo padrão de digitação.
+
+OBS2: exemplo de funcionamento com base nas inserções:
+
+ "morango" e "morango": deve exibir a primeira mensagem (b1)
+"morango" e "MorAngO", deve exibir a segunda mensagem (b2)
+"uva" e "morango": deve exibir a terceira mensagem (b3)
+-->

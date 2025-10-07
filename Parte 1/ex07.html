@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="password"
+      id="senha"
+      placeholder="Digite sua senha"
+      oninput="avaliar()"
+    /><br />
+    <div id="response"></div>
+
+    <script>
+      function avaliar() {
+        var pass = senha.value;
+        var criterios = 0;
+
+        if (pass.length >= 8) {
+          criterios++;
+        }
+
+        if (pass.toLowerCase() !== pass) {
+          criterios++;
+        }
+
+        if (pass.toUpperCase() !== pass) {
+          criterios++;
+        }
+
+        var nivel = "Insegura";
+        if (criterios == 1) {
+          nivel = "Fraca";
+        } else if (criterios == 2) {
+          nivel = "Média";
+        } else if (criterios == 3) {
+          nivel = "Forte";
+        }
+
+        response.innerHTML = `<h3>Força da senha: ${nivel}</h3>`;
+      }
+    </script>
+  </body>
+</html>
+<!--
+7. Senha Forte ou Fraca
+
+Crie um programa que:
+
+a) Solicite uma senha ao usuário.
+
+b) Enquanto o usuário digita, exiba a força da senha, com base nos critérios de segurança abaixo:
+
+A senha deve conter ao menos 8 caracteres.
+A senha deve conter 1 letra maiúscula.
+A senha deve conter 1 letra minúscula.
+c) A força da senha é baseada em quantos critérios de segurança foram utilizados, com os níveis:
+
+"Forte" - atingiu todos os critérios de segurança
+"Média" - atingiu 2 critérios de segurança
+"Fraca" - atingiu 1 critério de segurança
+"Insegura" - não atingiu nenhum critério de segurança
+OBS: utilize .toUpperCase() e .toLowerCase() para validar manipular a String e comparar se possui as letras maiúsculas e minúsculas.
+Como você poderia usar esses métodos para comparar se possui uma letra maiúscula ou minúscula? - Depende da sua lógica!
+
+OBS2: caso a senha seja um conjunto de apenas números ou caracteres especiais, não deve passar nas validações de "1 letra maiúscula" e "1 letra minúscula".
+
+-->

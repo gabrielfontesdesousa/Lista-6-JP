@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+</head>
+<body>
+    <input type="text" id="ipt_destino" placeholder="Destino: ">
+    <button onclick="adiciona()">Adicionar</button>
+    <button onclick="primeira()">Primeira viagem</button>
+    <button onclick="terceira()">Terceira viagem</button>
+    <button onclick="ultima()">Última viagem</button>
+     <div id="response"></div>
+    <script>
+        var destinos = []
+        function adiciona(){
+            var destino = ipt_destino.value
+            destinos.push(destino)
+        }
+        function primeira(){
+            if (destinos.length != 0){
+                response.innerHTML = `${destinos[0]}`
+            }
+            else{
+                response.innerHTML = `Ainda não viajou`
+            }
+        }
+        function terceira(){
+            if (destinos.length >= 3){
+                response.innerHTML = `${destinos[2]}`
+            }
+            else{
+                response.innerHTML = `Ainda não fez a terceira viagem`
+            }
+        }
+        function ultima(){
+            if (destinos.length != 0){
+                response.innerHTML = `${destinos[destinos.length - 1]}`
+            }
+            else{
+                response.innerHTML = `Ainda não viajou`
+            }
+        }
+
+    </script>
+</body>
+</html>
